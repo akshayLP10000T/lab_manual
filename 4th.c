@@ -3,7 +3,7 @@
 // Output: Two Five Six
 
 // prototype of printingDigit function
-void printWord(int a);
+void printWord(int);
 
 #include <stdio.h>
 
@@ -20,9 +20,9 @@ int main()
         return 0; // Returning here if number is not three digit
     }
 
-    hundreds = number / 100; // Getting first digit of number
+    hundreds = number / 100;   // Getting first digit of number
     tens = (number / 10) % 10; // Getting second digit of number
-    ones = number % 10; // Getting last digit of number
+    ones = number % 10;        // Getting last digit of number
 
     // function  calling for every digits
     printWord(hundreds);
