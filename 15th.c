@@ -13,31 +13,32 @@ int reverse_num(int, int);
 
 int main()
 {
-    int num, option;
+    int num, option; // Initialization of variables
 
     printf("Enter the value of num: ");
-    scanf("%d", &num);
-    while (1)
+    scanf("%d", &num); // Inputing value
+
+    while (1) // Infinite loop till user said to be active
     {
         printf("Select the operation using num keys:- \n");
         printf("1. Print factorial of number\n2. Print if the number is odd or even\n3. Print the reverse of number\n4. Exit\n\n");
         scanf("%d", &option);
 
         if (option == 1)
-            printf("Factorial of num is: %d\n\n", factorial(num));
+            printf("Factorial of num is: %d\n\n", factorial(num)); // To print factorial
         else if (option == 2)
         {
-            int isEven = oddOrEven(num);
+            int isEven = oddOrEven(num); // Calling oddOrEven function and storing its returning value
 
-            if (isEven)
+            if (isEven) // Checking num is Even or not
                 printf("Even number\n\n");
             else
                 printf("Odd number\n\n");
         }
         else if (option == 3)
-            printf("Reverse of num is: %d\n\n", reverse_num(num, 0));
+            printf("Reverse of num is: %d\n\n", reverse_num(num, 0)); // Reversing a number
         else if (option == 4)
-            break;
+            break; // To exit the loop
         else
             printf("Invalid input\n\n");
     }
@@ -45,23 +46,26 @@ int main()
     return 0;
 }
 
+// Fuction to find factorial
 int factorial(int num)
 {
     if (num == 0 || num == 1)
-        return 1;
+        return 1; // Basic statement to return value 1 on num == 0 or 1
     else
-        return num * factorial(num - 1);
+        return num * factorial(num - 1); // Recursive statement to find factorial
 }
 
+// Fucntion for odd even number
 int oddOrEven(int num)
 {
-    int isEven = 1;
+    int isEven = 1; // Assuming the number is even
 
-    if (num % 2 != 0)
-        isEven = 0;
-    return isEven;
+    if (num % 2 != 0) // Checking the number is divisible by 2 or not
+        isEven = 0;   // If not isEven set to 0
+    return isEven;    // Returning the value
 }
 
+// Function to reverse number
 int reverse_num(int number, int rev)
 {
     if (number == 0)
