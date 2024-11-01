@@ -11,12 +11,12 @@ void quickSort(int[], int, int);
 int main()
 {
     int arr[] = {1, 4, 10, 8, 7, 5, 6, 3, 2, 9}; // Sample array
-    int n = sizeof(arr) / sizeof(arr[0]); // Length of array
+    int n = sizeof(arr) / sizeof(arr[0]);        // Length of array
 
     printf("Original array: \n");
     printingArray(arr, n);
 
-    quickSort(arr, 0, n - 1);
+    quickSort(arr, 0, n - 1); // Calling quick sort function
 
     printf("Sorted array: \n");
     printingArray(arr, n);
@@ -38,18 +38,21 @@ void printingArray(int arr[], int length)
     while (i < length)
     {
         printf("%d ", arr[i]); // Printing array's ith index item
-        i++; // Updating i value
+        i++;                   // Updating i value
     }
     printf("\n");
 }
 
 // Partition function to rearrange the elements of an array
-int partition(int arr[], int low, int high) {
+int partition(int arr[], int low, int high)
+{
     int pivot = arr[high]; // Choosing the last element as pivot
     int i = (low - 1);
 
-    for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) {
+    for (int j = low; j < high; j++)
+    {
+        if (arr[j] < pivot)
+        {
             i++;
             swap(&arr[i], &arr[j]); // Swap function calling
         }
@@ -59,8 +62,10 @@ int partition(int arr[], int low, int high) {
 }
 
 // Quick sort function
-void quickSort(int arr[], int low, int high) {
-    if (low < high) {
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
         int pi = partition(arr, low, high); // partition function calling
 
         // Recursion
